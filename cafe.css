@@ -1,0 +1,233 @@
+/* Base Styles */
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #d35400;
+    --bg-color: #f9fbfd;
+    --text-color: #333;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navigation */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-weight: 600;
+    color: var(--primary-color);
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: background 0.3s;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: #e67e22;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 1rem;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+/* Amenities Section */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.amenities {
+    padding: 5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.amenity-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.amenity-card:hover {
+    transform: translateY(-5px);
+}
+
+.amenity-card h3 {
+    margin: 1rem 0;
+    color: var(--primary-color);
+}
+
+/* Pricing Section */
+.pricing {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 5rem 5%;
+}
+
+.pricing .section-title {
+    color: var(--white);
+}
+
+.pricing-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.price-card {
+    background: var(--white);
+    color: var(--text-color);
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.featured-card {
+    transform: scale(1.05);
+    border: 2px solid var(--accent-color);
+    height: 100%;
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    background: var(--white);
+}
+
+.price-card h3, .featured-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin: 1.5rem 0;
+}
+
+.price span {
+    font-size: 1rem;
+    color: #7f8c8d;
+}
+
+.price-card ul, .featured-card ul {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.price-card ul li, .featured-card ul li {
+    margin-bottom: 0.8rem;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background: #1a252f;
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 5%;
+}
+
+.footer-address {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #95a5a6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; 
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .featured-card {
+        transform: scale(1);
+    }
+}
